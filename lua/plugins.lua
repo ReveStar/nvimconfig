@@ -19,24 +19,24 @@ return require('packer').startup(function()
     }
     
     -- 主题
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use {
-        'navarasu/onedark.nvim'
-    }
-    use("rmehri01/onenord.nvim")
-	use("xiyaowong/nvim-transparent")
-    use("rebelot/kanagawa.nvim")
-    use("titanzero/zephyrium")
-    use("rafamadriz/neon")
-    use("Mofiqul/dracula.nvim")
+    use { "folke/tokyonight.nvim" }
     -- 首页
-	use("goolord/alpha-nvim")
+	use({
+        "goolord/alpha-nvim",
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.startify'.config)
+        end
+    })
 	-- 对齐线
 	use("lukas-reineke/indent-blankline.nvim")
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 	-- 状态栏
-	use("nvim-lualine/lualine.nvim")
-    use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+	use({
+        "nvim-lualine/lualine.nvim",
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    })
+    --use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 	-- 编辑历史
 	use("simnalamburt/vim-mundo")
 	-- 语法高亮，折叠代码，缩进处理
