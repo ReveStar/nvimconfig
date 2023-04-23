@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
   -- :TSInstallInfo 命令查看支持的语言
   ensure_installed = {
         "go", "python", "vim", "lua", "haskell", "rust",
-        "json","html","css","javascript","bash","markdown"
+        "json","html","css","javascript","bash"
     },
   -- 启用代码高亮功能
   highlight = {

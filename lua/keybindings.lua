@@ -34,6 +34,9 @@ map("n", ",q", ":Lines<CR>", opt)
 map("n", ",w", ":Rg<CR>", opt)
 map("n", ",b", ":Buffers<CR>", opt)
 
+-- lspfuzzy
+-- map("n", "<leader>ls", "<cmd>lua vim.lsp.buff.document_symbol()<CR>", opt)
+
 local pluginKeys = {}
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
@@ -41,20 +44,20 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 pluginKeys.nvimTreeList = {
 	-- 打开文件或文件夹
 	{ key = { "<CR>", "o", "<2-LeftMouse>" }, action = "tabnew" },
-	{ key = "e", action = "edit" },
+	{ key = "e",                              action = "edit" },
 	-- 分屏打开文件
-	{ key = "s", action = "vsplit" },
+	{ key = "s",                              action = "vsplit" },
 	-- 显示隐藏文件
-	{ key = "i", action = "toggle_ignored" }, -- Ignore (node_modules)
-	{ key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+	{ key = "i",                              action = "toggle_ignored" }, -- Ignore (node_modules)
+	{ key = ".",                              action = "toggle_dotfiles" }, -- Hide (dotfiles)
 	-- 文件操作
-	{ key = "a", action = "create" },
-	{ key = "d", action = "remove" },
-	{ key = "r", action = "rename" },
-	{ key = "x", action = "cut" },
-	{ key = "c", action = "copy" },
-	{ key = "p", action = "paste" },
-	{ key = "o", action = "system_open" },
+	{ key = "a",                              action = "create" },
+	{ key = "d",                              action = "remove" },
+	{ key = "r",                              action = "rename" },
+	{ key = "x",                              action = "cut" },
+	{ key = "c",                              action = "copy" },
+	{ key = "p",                              action = "paste" },
+	{ key = "o",                              action = "system_open" },
 }
 
 pluginKeys.mapLSP = function(mapbuf)
