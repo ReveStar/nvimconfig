@@ -62,6 +62,21 @@ return require('packer').startup(function(use)
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     }
     use { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
+    -- go
+    use {
+        "ray-x/go.nvim",
+    }
+    use "ray-x/guihua.lua"
+    use { 'neoclide/coc.nvim', branch = 'release' }
+    -- go debug
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    -- lua
+    use "folke/neodev.nvim"
+    -- undotree
+    use 'mbbill/undotree'
+    -- floatterm
+    use 'voldikss/vim-floaterm'
     -- 模糊匹配工具
     use {
         'junegunn/fzf',
@@ -89,10 +104,20 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lua"
+    use {
+        "windwp/nvim-autopairs",
+    }
     -- vsnip
     use "hrsh7th/cmp-vsnip"
     -- lsp美化
     use "onsails/lspkind-nvim"
+    use {
+        'ray-x/navigator.lua',
+        requires = {
+            { 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
+            { 'neovim/nvim-lspconfig' },
+        },
+    }
     -- 代码片段
     use {
         "SirVer/ultisnips",
@@ -119,14 +144,4 @@ return require('packer').startup(function(use)
     -- 格式化代码
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
     use({ "rlue/vim-barbaric" })
-    -- go
-    use {
-        "ray-x/go.nvim",
-    }
-    use "ray-x/guihua.lua"
-    use { 'neoclide/coc.nvim', branch = 'release' }
-    -- undotree
-    use 'mbbill/undotree'
-    -- floatterm
-    use 'voldikss/vim-floaterm'
 end)
