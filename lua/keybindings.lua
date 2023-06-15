@@ -34,6 +34,10 @@ map("n", ",q", ":Lines<CR>", opt)
 map("n", ",w", ":Rg<CR>", opt)
 map("n", ",b", ":Buffers<CR>", opt)
 
+-- floaterm
+map("n", "<leader>fft", ":FloatermNew<CR>", opt)
+map("n", "<leader>ffk", ":FloatermKill<CR>", opt)
+
 -- lspfuzzy
 -- map("n", "<leader>ls", "<cmd>lua vim.lsp.buff.document_symbol()<CR>", opt)
 

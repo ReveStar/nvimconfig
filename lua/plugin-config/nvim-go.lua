@@ -100,3 +100,17 @@ require('go').setup({
     on_stderr = function(err, data) _, _ = err, data end,                        -- callback for stderr
     on_exit = function(code, signal, output) _, _, _ = code, signal, output end, -- callback for jobexit, output : string
 })
+
+
+-- Run gofmt + goimport on save
+
+local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+
