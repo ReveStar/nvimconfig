@@ -5,3 +5,4 @@
 vim.keymap.set("n", "<leader>tt", ":FloatermNew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>tk", ":FloatermKill<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>th", ":FloatermHide", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ts", ":FloatermShow", { noremap = true, silent = true })
